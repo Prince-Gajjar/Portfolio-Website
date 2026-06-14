@@ -80,7 +80,7 @@ const Scene = () => {
                   light.turnOnLights();
                   animations.startIntro();
                 }
-              }, 2500);
+              }, 1000);
             }
           });
           window.addEventListener("resize", () =>
