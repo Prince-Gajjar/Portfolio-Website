@@ -19,6 +19,14 @@ const MainContainer = ({ children }: PropsWithChildren) => {
   );
 
   useEffect(() => {
+    import("./utils/initialFX").then((module) => {
+      if (module.initialFX) {
+        module.initialFX();
+      }
+    });
+  }, []);
+
+  useEffect(() => {
     const resizeHandler = () => {
       setSplitText();
       setIsDesktopView(window.innerWidth > 1024);
