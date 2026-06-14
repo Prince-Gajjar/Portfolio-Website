@@ -24,6 +24,7 @@ export function initialFX() {
 
   let TextProps = { type: "chars,lines", linesClass: "split-h2" };
 
+  // "Developer" - intro animation
   var landingText2 = new TextSplitter(".landing-h2-info", TextProps);
   gsap.fromTo(
     landingText2.chars,
@@ -61,65 +62,92 @@ export function initialFX() {
     }
   );
 
+  // "Engineer" - hidden initially (will be looped in)
   var landingText3 = new TextSplitter(".landing-h2-info-1", TextProps);
+  // "Full Stack" - visible initially
   var landingText4 = new TextSplitter(".landing-h2-1", TextProps);
+  // "Software" - hidden initially (will be looped in)
   var landingText5 = new TextSplitter(".landing-h2-2", TextProps);
 
-  LoopText(landingText2, landingText3);
-  LoopText(landingText4, landingText5);
+  // Single synchronized timeline: both rows transition together
+  SyncedLoopText(
+    landingText4, landingText5, // top row: Full Stack / Software
+    landingText2, landingText3  // bottom row: Developer / Engineer
+  );
 }
 
-function LoopText(Text1: TextSplitter, Text2: TextSplitter) {
-  var tl = gsap.timeline({ repeat: -1, repeatDelay: 1 });
-  const delay = 4;
-  const delay2 = delay * 2 + 1;
+/**
+ * Animates two complete titles in sync:
+ *   Title A = topA + bottomA  (e.g. "Full Stack Developer")
+ *   Title B = topB + bottomB  (e.g. "Software Engineer")
+ * They alternate: A shows first, then slides out as B slides in, then repeats.
+ */
+function SyncedLoopText(
+  topA: TextSplitter,
+  topB: TextSplitter,
+  bottomA: TextSplitter,
+  bottomB: TextSplitter
+) {
+  const holdDuration = 3;    // how long each title stays visible
+  const slideDuration = 0.7; // slide in/out animation duration
+  const stagger = 0.04;
 
-  tl.fromTo(
-    Text2.chars,
-    { opacity: 0, y: 80 },
+  // Set initial state: Title B chars start below, hidden
+  gsap.set([...topB.chars, ...bottomB.chars], { y: 80, opacity: 0 });
+
+  const tl = gsap.timeline({ repeat: -1, repeatDelay: 0 });
+
+  // --- Phase 1: Title A is visible. After hold, slide A out upward ---
+  tl.to(
+    [...topA.chars, ...bottomA.chars],
     {
-      opacity: 1,
-      duration: 1.2,
+      y: -80,
+      opacity: 0,
+      duration: slideDuration,
       ease: "power3.inOut",
-      y: 0,
-      stagger: 0.1,
-      delay: delay,
+      stagger: stagger,
     },
-    0
+    `+=${holdDuration}`
   )
-    .fromTo(
-      Text1.chars,
-      { y: 80 },
-      {
-        duration: 1.2,
-        ease: "power3.inOut",
-        y: 0,
-        stagger: 0.1,
-        delay: delay2,
-      },
-      1
-    )
-    .fromTo(
-      Text1.chars,
-      { y: 0 },
-      {
-        y: -80,
-        duration: 1.2,
-        ease: "power3.inOut",
-        stagger: 0.1,
-        delay: delay,
-      },
-      0
-    )
-    .to(
-      Text2.chars,
-      {
-        y: -80,
-        duration: 1.2,
-        ease: "power3.inOut",
-        stagger: 0.1,
-        delay: delay2,
-      },
-      1
-    );
+
+  // --- Phase 2: Slide Title B in from below, in sync ---
+  .fromTo(
+    [...topB.chars, ...bottomB.chars],
+    { y: 80, opacity: 0 },
+    {
+      y: 0,
+      opacity: 1,
+      duration: slideDuration,
+      ease: "power3.inOut",
+      stagger: stagger,
+    },
+    "<" // starts at same time as slide-out
+  )
+
+  // --- Phase 3: After hold, slide B out upward ---
+  .to(
+    [...topB.chars, ...bottomB.chars],
+    {
+      y: -80,
+      opacity: 0,
+      duration: slideDuration,
+      ease: "power3.inOut",
+      stagger: stagger,
+    },
+    `+=${holdDuration}`
+  )
+
+  // --- Phase 4: Slide Title A back in from below, in sync ---
+  .fromTo(
+    [...topA.chars, ...bottomA.chars],
+    { y: 80, opacity: 0 },
+    {
+      y: 0,
+      opacity: 1,
+      duration: slideDuration,
+      ease: "power3.inOut",
+      stagger: stagger,
+    },
+    "<"
+  );
 }
