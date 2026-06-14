@@ -22,7 +22,7 @@ const Landing = ({ children }: PropsWithChildren) => {
         <div className="landing-info">
           <h3>A</h3>
           <h2 className="landing-info-h2">
-            <div className="landing-h2-1">Full Stack</div>
+            <div className="landing-h2-1">Full{"\u00a0"}Stack</div>
             <div className="landing-h2-2">Software</div>
           </h2>
           <h2>
