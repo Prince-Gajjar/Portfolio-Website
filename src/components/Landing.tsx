@@ -21,14 +21,19 @@ const Landing = ({ children }: PropsWithChildren) => {
         </div>
         <div className="landing-info">
           <h3>A</h3>
-          <h2 className="landing-info-h2">
-            <div className="landing-h2-1">Full{"\u00a0"}Stack</div>
-            <div className="landing-h2-2">Software</div>
-          </h2>
-          <h2>
-            <div className="landing-h2-info">Developer</div>
-            <div className="landing-h2-info-1">Engineer</div>
-          </h2>
+          {/* Title switcher: overflow hidden clips the inactive title */}
+          <div className="landing-titles-switcher">
+            {/* Title A: Full Stack Developer */}
+            <div className="landing-title-block landing-title-a">
+              <h2 className="landing-info-h2 landing-h2-1">Full{"\u00a0"}Stack</h2>
+              <h2 className="landing-h2-info">Developer</h2>
+            </div>
+            {/* Title B: Software Engineer */}
+            <div className="landing-title-block landing-title-b">
+              <h2 className="landing-info-h2 landing-h2-2">Software</h2>
+              <h2 className="landing-h2-info-1">Engineer</h2>
+            </div>
+          </div>
         </div>
         {/* Mobile photo - shows only on mobile when 3D character is hidden */}
         <div className="mobile-photo">
