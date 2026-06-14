@@ -1,19 +1,7 @@
 import { TextSplitter } from "../../utils/textSplitter";
 import gsap from "gsap";
-import { lenis } from "../Navbar";
 
 export function initialFX() {
-  document.body.style.overflowY = "auto";
-  if (lenis) {
-    lenis.start();
-  }
-  document.getElementsByTagName("main")[0].classList.add("main-active");
-  gsap.to("body", {
-    backgroundColor: "#0b080c",
-    duration: 0.5,
-    delay: 1,
-  });
-
   const selectors = [".landing-info h3", ".landing-intro h2", ".landing-intro h1"];
   const elements = selectors.flatMap(selector => Array.from(document.querySelectorAll(selector)));
   var landingText = new TextSplitter(elements, {
