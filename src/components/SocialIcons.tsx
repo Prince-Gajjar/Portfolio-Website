@@ -46,12 +46,24 @@ const SocialIcons = () => {
       };
 
       document.addEventListener("mousemove", onMouseMove);
-
       updatePosition();
 
       return () => {
         elem.removeEventListener("mousemove", onMouseMove);
       };
+    });
+
+    // Hide social icons when footer comes into view
+    import("gsap/ScrollTrigger").then(({ ScrollTrigger }) => {
+      import("gsap").then(({ default: gsap }) => {
+        gsap.registerPlugin(ScrollTrigger);
+        ScrollTrigger.create({
+          trigger: ".contact-section",
+          start: "top 90%",
+          onEnter: () => gsap.to(".icons-section", { opacity: 0, duration: 0.3 }),
+          onLeaveBack: () => gsap.to(".icons-section", { opacity: 1, duration: 0.3 }),
+        });
+      });
     });
   }, []);
 
