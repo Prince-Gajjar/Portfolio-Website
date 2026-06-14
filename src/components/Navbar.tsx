@@ -25,7 +25,8 @@ const Navbar = () => {
       infinite: false,
     });
 
-    // Start immediately (no loading screen to wait for)
+    // Sync Lenis scroll with GSAP ScrollTrigger
+    lenis.on("scroll", ScrollTrigger.update);
 
     // Handle smooth scroll animation frame
     function raf(time: number) {
@@ -33,6 +34,9 @@ const Navbar = () => {
       requestAnimationFrame(raf);
     }
     requestAnimationFrame(raf);
+
+    // Refresh ScrollTrigger after Lenis starts
+    ScrollTrigger.refresh();
 
     // Handle desktop navigation links
     let links = document.querySelectorAll(".header ul a");

@@ -20,30 +20,22 @@ const Contact = () => {
     });
 
     // Animate title from bottom
-    contactTimeline.fromTo(
+    contactTimeline.from(
       ".contact-section h3",
       {
         opacity: 0,
         y: 50,
-      },
-      {
-        opacity: 1,
-        y: 0,
         duration: 0.8,
         ease: "power3.out",
       }
     );
 
     // Animate big buttons row
-    contactTimeline.fromTo(
+    contactTimeline.from(
       ".contact-big-buttons",
       {
         opacity: 0,
         y: 40,
-      },
-      {
-        opacity: 1,
-        y: 0,
         duration: 0.7,
         ease: "power3.out",
       },
@@ -51,15 +43,11 @@ const Contact = () => {
     );
 
     // Animate contact boxes with stagger from bottom
-    contactTimeline.fromTo(
+    contactTimeline.from(
       ".contact-box",
       {
         opacity: 0,
         y: 50,
-      },
-      {
-        opacity: 1,
-        y: 0,
         duration: 0.6,
         stagger: 0.15,
         ease: "power3.out",
