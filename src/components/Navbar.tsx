@@ -11,6 +11,7 @@ export let lenis: Lenis | null = null;
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState<string>("");
 
   useEffect(() => {
     // Initialize Lenis smooth scroll
@@ -78,6 +79,33 @@ const Navbar = () => {
     };
   }, []);
 
+  // Active section tracking via IntersectionObserver
+  useEffect(() => {
+    const sectionIds = ["about", "work", "contact"];
+    const observers: IntersectionObserver[] = [];
+
+    sectionIds.forEach((id) => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              setActiveSection(id);
+            }
+          });
+        },
+        { threshold: 0.3 }
+      );
+      observer.observe(el);
+      observers.push(observer);
+    });
+
+    return () => {
+      observers.forEach((obs) => obs.disconnect());
+    };
+  }, []);
+
   const toggleMenu = () => {
     const nextState = !isMenuOpen;
     setIsMenuOpen(nextState);
@@ -127,17 +155,17 @@ const Navbar = () => {
         <nav className="desktop-nav" aria-label="Main Navigation">
           <ul>
             <li>
-              <a data-href="#about" href="#about">
+              <a data-href="#about" href="#about" className={activeSection === "about" ? "nav-active" : ""}>
                 <HoverLinks text="ABOUT" />
               </a>
             </li>
             <li>
-              <a data-href="#work" href="#work">
+              <a data-href="#work" href="#work" className={activeSection === "work" ? "nav-active" : ""}>
                 <HoverLinks text="WORK" />
               </a>
             </li>
             <li>
-              <a data-href="#contact" href="#contact">
+              <a data-href="#contact" href="#contact" className={activeSection === "contact" ? "nav-active" : ""}>
                 <HoverLinks text="CONTACT" />
               </a>
             </li>
@@ -163,28 +191,31 @@ const Navbar = () => {
         <nav aria-label="Mobile Navigation">
           <ul>
             <li className={isMenuOpen ? "slide-in-1" : ""}>
-              <a 
-                href="#about" 
+              <a
+                href="#about"
                 onClick={(e) => handleMobileLinkClick(e, "#about")}
                 data-cursor="disable"
+                className={activeSection === "about" ? "nav-active" : ""}
               >
                 ABOUT
               </a>
             </li>
             <li className={isMenuOpen ? "slide-in-2" : ""}>
-              <a 
-                href="#work" 
+              <a
+                href="#work"
                 onClick={(e) => handleMobileLinkClick(e, "#work")}
                 data-cursor="disable"
+                className={activeSection === "work" ? "nav-active" : ""}
               >
                 WORK
               </a>
             </li>
             <li className={isMenuOpen ? "slide-in-3" : ""}>
-              <a 
-                href="#contact" 
+              <a
+                href="#contact"
                 onClick={(e) => handleMobileLinkClick(e, "#contact")}
                 data-cursor="disable"
+                className={activeSection === "contact" ? "nav-active" : ""}
               >
                 CONTACT
               </a>

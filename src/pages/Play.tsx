@@ -1,5 +1,6 @@
 import { useState, useCallback, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { Chess, Square, PieceSymbol, Color } from "chess.js";
 import RedoxChessEngine from "../utils/redoxchessEngine";
 import "./Play.css";
@@ -226,6 +227,22 @@ const Play = () => {
 
   return (
     <div className="play-page">
+      <Helmet>
+        <title>Play Chess | Prince Gajjar — Interactive Chess vs AI</title>
+        <meta name="description" content="Play a game of chess against the Redox AI engine on Prince Gajjar's portfolio. A fun interactive chess experience built with React.js and chess.js." />
+        <link rel="canonical" href="https://prince.devflow.co.in/play" />
+        <meta property="og:title" content="Play Chess | Prince Gajjar — Interactive Chess vs AI" />
+        <meta property="og:description" content="Play a game of chess against the Redox AI engine on Prince Gajjar's portfolio. A fun interactive chess experience built with React.js and chess.js." />
+        <meta property="og:url" content="https://prince.devflow.co.in/play" />
+        <meta property="og:image" content="https://prince.devflow.co.in/images/og-banner.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:title" content="Play Chess | Prince Gajjar — Interactive Chess vs AI" />
+        <meta property="twitter:description" content="Play a game of chess against the Redox AI engine on Prince Gajjar's portfolio. A fun interactive chess experience built with React.js and chess.js." />
+        <meta property="twitter:image" content="https://prince.devflow.co.in/images/og-banner.png" />
+      </Helmet>
       {/* Header */}
       <div className="play-header">
         <Link to="/" className="back-button" data-cursor="disable">

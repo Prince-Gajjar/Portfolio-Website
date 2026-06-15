@@ -85,6 +85,7 @@ const Work = () => {
                 </div>
                 <h4>Tools and features</h4>
                 <p>{project.technologies}</p>
+                <p className="work-description">{project.description}</p>
               </div>
               <WorkImage image={project.image} alt={project.title} />
             </a>

@@ -23,7 +23,9 @@
 }
 @media only screen and (max-width: 900px) {
   .section-container {
-    width: 500px;
+    width: 100%;
     max-width: var(--cWidth);
+    margin-left: auto;
+    margin-right: auto;
   }
 }

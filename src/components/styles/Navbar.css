@@ -38,6 +38,29 @@
   cursor: pointer;
 }
 
+/* Active nav link indicator */
+.desktop-nav ul a.nav-active,
+.desktop-nav ul a.nav-active .hover-in,
+.desktop-nav ul a.nav-active .hover-in div {
+  color: var(--accentColor) !important;
+}
+
+.desktop-nav ul a.nav-active::after {
+  content: "";
+  display: block;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--accentColor);
+  margin: 3px auto 0;
+  animation: navDotPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes navDotPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.7); }
+}
+
 .navbar-connect {
   position: absolute;
   display: none;
@@ -165,6 +188,10 @@
 .mobile-menu-overlay a:hover {
   color: var(--accentColor);
   letter-spacing: 6px;
+}
+
+.mobile-menu-overlay a.nav-active {
+  color: var(--accentColor);
 }
 
 /* Responsiveness Media Queries */

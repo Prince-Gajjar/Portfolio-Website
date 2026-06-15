@@ -209,25 +209,46 @@ a.contact-social {
 @media only screen and (max-width: 900px) {
   .contact-big-buttons {
     grid-template-columns: 1fr;
-    gap: 15px;
-    margin-bottom: 40px;
+    gap: 12px;
+    margin-bottom: 36px;
   }
   .contact-flex {
     flex-direction: column;
-    gap: 40px;
+    gap: 32px;
   }
   .contact-flex p {
     margin-bottom: 0px;
   }
   .contact-flex h4 {
-    margin-top: 20px;
+    margin-top: 16px;
   }
   .contact-section {
-    margin-top: 30px;
+    margin-top: 0;
     padding-top: 40px;
-    padding-bottom: 40px;
+    padding-bottom: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+    width: 100% !important;
+    max-width: 100% !important;
   }
   .contact-container {
-    width: calc(100% - 25px);
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .contact-btn {
+    padding: 18px 20px;
+    gap: 14px;
+  }
+  .contact-btn-title {
+    font-size: 14px;
+  }
+  .contact-section h3 {
+    font-size: 26px;
+    margin-bottom: 20px;
+  }
+  .contact-box h2 {
+    font-size: 15px;
+    line-height: 20px;
   }
 }

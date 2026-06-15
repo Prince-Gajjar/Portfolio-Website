@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
+Disallow: /api/
 
-Sitemap: https://www.princegajjar.me/sitemap.xml
+# Block access to source maps
+Disallow: /*.map$
+
+Sitemap: https://prince.devflow.co.in/sitemap.xml

@@ -23,6 +23,9 @@ const Landing = ({ children }: PropsWithChildren) => {
           <h3>A</h3>
           <h2 className="landing-info-h2">Full{"\u00a0"}Stack</h2>
           <h2 className="landing-h2-info">Developer</h2>
+          <a href="#work" className="landing-cta" data-cursor="disable">
+            View My Work <span className="landing-cta-arrow">↓</span>
+          </a>
         </div>
         {/* Mobile photo - shows only on mobile when 3D character is hidden */}
         <div className="mobile-photo">

@@ -9,21 +9,45 @@
     <meta name="author" content="Prince Gajjar" />
     <meta name="theme-color" content="#0b080c" />
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-    <link rel="canonical" href="https://www.princegajjar.me/" />
+    <!-- Preconnect for Google Fonts (reduces DNS lookup time) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- DNS Prefetch for external resources -->
+    <link rel="dns-prefetch" href="https://github.com" />
+    <link rel="dns-prefetch" href="https://linkedin.com" />
+    <!-- Favicon & App Icons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <!-- Geographic / Local SEO -->
+    <meta name="geo.region" content="IN-GJ" />
+    <meta name="geo.placename" content="Ahmedabad, Gujarat, India" />
+    <meta name="geo.position" content="23.0225;72.5714" />
+    <meta name="ICBM" content="23.0225, 72.5714" />
+    <link rel="canonical" href="https://prince.devflow.co.in/" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://www.princegajjar.me/" />
+    <meta property="og:url" content="https://prince.devflow.co.in/" />
     <meta property="og:title" content="Prince Gajjar - Full Stack Developer | Software Engineer Ahmedabad | React & .NET" />
     <meta property="og:description" content="Specializing in building robust, production-ready web applications, ERP systems, and secure REST APIs using React, Node.js, and C# .NET." />
-    <meta property="og:image" content="https://www.princegajjar.me/images/prince_profile.jpeg" />
+    <meta property="og:image" content="https://prince.devflow.co.in/images/og-banner.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:locale" content="en_IN" />
+    <meta property="og:site_name" content="Prince Gajjar Portfolio" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://www.princegajjar.me/" />
+    <meta property="twitter:url" content="https://prince.devflow.co.in/" />
     <meta property="twitter:title" content="Prince Gajjar - Full Stack Developer | Software Engineer Ahmedabad | React & .NET" />
     <meta property="twitter:description" content="Specializing in building robust, production-ready web applications, ERP systems, and secure REST APIs." />
-    <meta property="twitter:image" content="https://www.princegajjar.me/images/prince_profile.jpeg" />
+    <meta property="twitter:image" content="https://prince.devflow.co.in/images/og-banner.png" />
+
+    <!-- Google Search Console Verification -->
+    <!-- <meta name="google-site-verification" content="YOUR_VERIFICATION_TOKEN_HERE" /> -->
 
     <!-- JSON-LD Structured Data Schema Markup (SEO / AEO / GEO Optimization) -->
     <script type="application/ld+json">
@@ -32,7 +56,7 @@
         "@graph": [
           {
             "@type": "Person",
-            "@id": "https://www.princegajjar.me/#person",
+            "@id": "https://prince.devflow.co.in/#person",
             "name": "Prince Gajjar",
             "jobTitle": "Full Stack Developer",
             "description": "Prince Gajjar is a professional Full Stack Developer and Software Engineer based in Ahmedabad, India, specializing in building responsive web applications, custom ERP systems, and secure REST APIs.",
@@ -42,11 +66,18 @@
               "name": "DevFlow Technology",
               "url": "https://devflow.co.in"
             },
-            "url": "https://www.princegajjar.me/",
-            "image": "https://www.princegajjar.me/images/prince_profile.jpeg",
+            "url": "https://prince.devflow.co.in/",
+            "image": "https://prince.devflow.co.in/images/prince_profile.jpeg",
+            "email": "work.princegajjar@gmail.com",
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "professional",
+              "email": "work.princegajjar@gmail.com",
+              "availableLanguage": ["English", "Hindi", "Gujarati"]
+            },
             "sameAs": [
               "https://github.com/Prince-Gajjar",
-              "https://www.linkedin.com/in/prince-gajjar"
+              "https://linkedin.com/in/prince-gajjar-55281b305"
             ],
             "alumniOf": [
               {
@@ -93,11 +124,11 @@
             "@id": "https://devflow.co.in/#agency",
             "name": "DevFlow Technology",
             "url": "https://devflow.co.in",
-            "logo": "https://www.princegajjar.me/images/prince_profile.jpeg",
-            "image": "https://www.princegajjar.me/images/prince_profile.jpeg",
+            "logo": "https://prince.devflow.co.in/images/prince_profile.jpeg",
+            "image": "https://prince.devflow.co.in/images/prince_profile.jpeg",
             "description": "DevFlow Technology is a custom software development agency specializing in end-to-end web applications, ERP dashboards, and secure REST APIs using React.js, Node.js, and C# .NET.",
             "founder": {
-              "@id": "https://www.princegajjar.me/#person"
+              "@id": "https://prince.devflow.co.in/#person"
             },
             "address": {
               "@type": "PostalAddress",
@@ -108,25 +139,33 @@
           },
           {
             "@type": "WebSite",
-            "@id": "https://www.princegajjar.me/#website",
-            "url": "https://www.princegajjar.me/",
+            "@id": "https://prince.devflow.co.in/#website",
+            "url": "https://prince.devflow.co.in/",
             "name": "Prince Gajjar | Full Stack Developer Portfolio",
             "publisher": {
-              "@id": "https://www.princegajjar.me/#person"
+              "@id": "https://prince.devflow.co.in/#person"
+            },
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://prince.devflow.co.in/?q={search_term_string}"
+              },
+              "query-input": "required name=search_term_string"
             }
           },
           {
             "@type": "ProfilePage",
-            "@id": "https://www.princegajjar.me/#profilepage",
-            "url": "https://www.princegajjar.me/",
+            "@id": "https://prince.devflow.co.in/#profilepage",
+            "url": "https://prince.devflow.co.in/",
             "name": "Prince Gajjar's Professional Portfolio",
             "mainEntity": {
-              "@id": "https://www.princegajjar.me/#person"
+              "@id": "https://prince.devflow.co.in/#person"
             }
           },
           {
             "@type": "FAQPage",
-            "@id": "https://www.princegajjar.me/#faq",
+            "@id": "https://prince.devflow.co.in/#faq",
             "mainEntity": [
               {
                 "@type": "Question",
@@ -185,6 +224,68 @@
                 }
               }
             ]
+          },
+          {
+            "@type": "ItemList",
+            "@id": "https://prince.devflow.co.in/#projects",
+            "name": "Prince Gajjar's Portfolio Projects",
+            "description": "A collection of full-stack web applications, ERP systems, and real-time platforms built by Prince Gajjar.",
+            "numberOfItems": 5,
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Narmada Sales Platform",
+                "description": "A high-performance Full Stack B2B E-commerce and sales distribution portal built using React.js, Node.js, and MySQL.",
+                "url": "https://narmadasales.pages.dev/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "VassuTalks Platform",
+                "description": "A low-latency WebRTC-based video conferencing and real-time chat application featuring Socket.io signaling.",
+                "url": "https://vassutalks.vassuinfotech.com/landing"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Path Visa Consulting Advisor",
+                "description": "An SEO-optimized agency portal for visa consulting built with Next.js, React.js, and Tailwind CSS.",
+                "url": "https://path-visa-advisor.vercel.app/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 4,
+                "name": "Vassu Infotech Official Website",
+                "description": "Official enterprise website for Vassu Infotech built using React.js, Vite, and GSAP animations.",
+                "url": "https://vassuinfotech.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 5,
+                "name": "Construction Tracker ERP",
+                "description": "A comprehensive PHP MySQL ERP system for construction tracking with automated wage calculation and inventory management.",
+                "url": "https://construction-tracker.free.nf/auth/login.php/"
+              }
+            ]
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://prince.devflow.co.in/#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://prince.devflow.co.in/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "My Works",
+                "item": "https://prince.devflow.co.in/myworks"
+              }
+            ]
           }
         ]
       }
@@ -192,6 +293,41 @@
   </head>
   <body>
     <div id="root"></div>
+    <!-- Fallback for crawlers & users without JavaScript -->
+    <noscript>
+      <div style="font-family:sans-serif;padding:40px 20px;background:#0b080c;color:#eae5ec;max-width:900px;margin:0 auto;line-height:1.6">
+        <h1 style="color:#b5e252;margin-bottom:8px">Prince Gajjar — Full Stack Developer & Software Engineer</h1>
+        <p style="margin-top:0;color:#aaa">Ahmedabad, Gujarat, India &nbsp;|&nbsp; work.princegajjar@gmail.com</p>
+        <p>Professional Full Stack Developer specializing in custom React.js, Node.js, and C# .NET web applications, enterprise ERP portals, and secure REST APIs. Founder of DevFlow Technology.</p>
+
+        <h2 style="color:#b5e252">Skills & Technologies</h2>
+        <p><strong>Frontend:</strong> React.js, Next.js, TypeScript, JavaScript, HTML5, CSS3, GSAP, Tailwind CSS</p>
+        <p><strong>Backend:</strong> Node.js, Express.js, C# .NET, REST APIs, JWT Authentication</p>
+        <p><strong>Databases:</strong> MySQL, PostgreSQL, MongoDB</p>
+        <p><strong>Tools:</strong> Git, Docker, Vercel, Railway, Hostinger, Figma</p>
+
+        <h2 style="color:#b5e252">Career & Experience</h2>
+        <ul>
+          <li><strong>Founder & Lead Developer</strong> — DevFlow Technology (Jan 2026 – Present)</li>
+          <li><strong>Software Developer</strong> — Vassu Infotech (Feb 2025 – Mar 2026)</li>
+          <li><strong>Web Designer Intern</strong> — IT Path Solutions (Jun 2023 – Jan 2024)</li>
+        </ul>
+
+        <h2 style="color:#b5e252">Portfolio Projects</h2>
+        <ul>
+          <li><strong>Narmada Sales Platform</strong> — B2B E-Commerce & sales distribution portal (React.js, Node.js, MySQL)</li>
+          <li><strong>VassuTalks Platform</strong> — WebRTC real-time video conferencing & chat (React.js, Socket.io, Node.js)</li>
+          <li><strong>Path Visa Consulting Advisor</strong> — SEO-optimized agency portal (Next.js, Tailwind CSS, Vercel)</li>
+          <li><strong>Vassu Infotech Official Website</strong> — Enterprise website (React.js, GSAP, Vite)</li>
+          <li><strong>Construction Tracker ERP</strong> — Full ERP for construction management (PHP, MySQL)</li>
+        </ul>
+
+        <h2 style="color:#b5e252">Contact & Profiles</h2>
+        <p>Email: <a href="mailto:work.princegajjar@gmail.com" style="color:#b5e252">work.princegajjar@gmail.com</a></p>
+        <p>GitHub: <a href="https://github.com/Prince-Gajjar" style="color:#b5e252">github.com/Prince-Gajjar</a></p>
+        <p>LinkedIn: <a href="https://linkedin.com/in/prince-gajjar-55281b305" style="color:#b5e252">linkedin.com/in/prince-gajjar-55281b305</a></p>
+      </div>
+    </noscript>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

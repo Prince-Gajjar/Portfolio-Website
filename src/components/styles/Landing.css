@@ -234,6 +234,44 @@
   white-space: nowrap;
 }
 
+/* Hero CTA Button */
+.landing-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 22px;
+  margin-left: 20px;
+  padding: 10px 24px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #000;
+  background: var(--accentColor);
+  border-radius: 40px;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  white-space: nowrap;
+  position: relative;
+  z-index: 10;
+}
+
+.landing-cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(181, 226, 82, 0.35);
+  color: #000;
+}
+
+.landing-cta-arrow {
+  display: inline-block;
+  animation: ctaArrowBounce 1.8s ease-in-out infinite;
+}
+
+@keyframes ctaArrowBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(4px); }
+}
+
 .landing-h2-info,
 .landing-h2-info-1 {
   white-space: nowrap;
@@ -530,6 +568,16 @@ h2.landing-info-h2 {
     height: auto !important;
     width: 100% !important;
     order: 3;
+  }
+
+  /* CTA Button mobile override */
+  .landing-cta {
+    margin-top: 16px !important;
+    margin-left: 0 !important;
+    font-size: 12px !important;
+    padding: 9px 22px !important;
+    order: 4;
+    align-self: center;
   }
 
   .landing-info h3 {

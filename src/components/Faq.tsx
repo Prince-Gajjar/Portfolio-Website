@@ -43,7 +43,7 @@ const Faq = () => {
   return (
     <section className="faq-section section-container" id="faq">
       <div className="faq-container">
-        <h3 className="section-title">Common Queries (AEO & FAQ)</h3>
+        <h3 className="section-title">Frequently Asked Questions</h3>
         <div className="faq-list">
           {faqData.map((item, index) => {
             const isOpen = openIndex === index;
