@@ -363,15 +363,15 @@
   .whatIDO {
     flex-direction: column;
     height: auto !important;
-    min-height: 100vh;
-    padding: 80px 0px 50px 0px !important;
+    min-height: auto !important;
+    padding: 40px 0px 30px 0px !important;
     box-sizing: border-box;
   }
 
   .what-box h2 {
-    margin: 40px 0;
-    font-size: 45px;
-    line-height: 43px;
+    margin: 20px 0 30px 0;
+    font-size: 36px;
+    line-height: 38px;
     text-align: center;
     width: 100%;
   }
