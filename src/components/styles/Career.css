@@ -44,8 +44,16 @@
   margin-bottom: 50px;
 }
 
-.career-info-box p {
+.career-details {
   width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.career-info-box p {
+  width: 100%;
   font-size: 14px;
   font-weight: 300;
   margin: 0;
@@ -241,7 +249,7 @@
     gap: 20px;
   }
 
-  .career-info-box p {
+  .career-details {
     width: 45%;
   }
 }
@@ -289,11 +297,17 @@
   }
 
   .career-info-in,
+  .career-details {
+    width: 100%;
+    padding-left: 10%;
+    box-sizing: border-box;
+  }
+
   .career-info-box p,
   .career-responsibilities,
   .career-tech-tags {
     width: 100%;
-    padding-left: 10%;
+    padding-left: 0;
     box-sizing: border-box;
   }
 
@@ -341,10 +355,14 @@
   }
 
   .career-info-in,
+  .career-details {
+    padding-left: 6%;
+  }
+
   .career-info-box p,
   .career-responsibilities,
   .career-tech-tags {
-    padding-left: 6%;
+    padding-left: 0;
   }
 
   .career-section {

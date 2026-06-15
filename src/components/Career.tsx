@@ -45,21 +45,23 @@ const Career = () => {
                 </div>
                 {renderPeriod(exp.period)}
               </div>
-              <p>{exp.description}</p>
-              {exp.responsibilities && exp.responsibilities.length > 0 && (
-                <ul className="career-responsibilities">
-                  {exp.responsibilities.slice(0, 3).map((resp, rIdx) => (
-                    <li key={rIdx}>{resp}</li>
-                  ))}
-                </ul>
-              )}
-              {exp.technologies && exp.technologies.length > 0 && (
-                <div className="career-tech-tags">
-                  {exp.technologies.map((tech, tIdx) => (
-                    <span key={tIdx} className="career-tech-tag">{tech}</span>
-                  ))}
-                </div>
-              )}
+              <div className="career-details">
+                <p>{exp.description}</p>
+                {exp.responsibilities && exp.responsibilities.length > 0 && (
+                  <ul className="career-responsibilities">
+                    {exp.responsibilities.slice(0, 3).map((resp, rIdx) => (
+                      <li key={rIdx}>{resp}</li>
+                    ))}
+                  </ul>
+                )}
+                {exp.technologies && exp.technologies.length > 0 && (
+                  <div className="career-tech-tags">
+                    {exp.technologies.map((tech, tIdx) => (
+                      <span key={tIdx} className="career-tech-tag">{tech}</span>
+                    ))}
+                  </div>
+                )}
+              </div>
             </div>
           ))}
         </div>
