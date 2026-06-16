@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://prince.devflow.co.in/</loc>
+    <lastmod>2026-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://prince.devflow.co.in/images/prince_profile.jpeg</image:loc>
+      <image:title>Prince Gajjar - Full Stack Developer</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://prince.devflow.co.in/images/project-1.webp</image:loc>
+      <image:title>Narmada Sales Platform - B2B E-Commerce Portal</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://prince.devflow.co.in/images/project-2.webp</image:loc>
+      <image:title>VassuTalks - WebRTC Real-Time Chat Platform</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://prince.devflow.co.in/images/project-3.webp</image:loc>
+      <image:title>Path Visa Consulting Advisor - SEO Agency Portal</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://prince.devflow.co.in/images/project-4.webp</image:loc>
+      <image:title>Vassu Infotech Official Website</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://prince.devflow.co.in/images/project-5.webp</image:loc>
+      <image:title>Construction Tracker ERP - PHP MySQL System</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://prince.devflow.co.in/myworks</loc>
+    <lastmod>2026-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://prince.devflow.co.in/play</loc>
+    <lastmod>2026-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+</urlset>

@@ -5,4 +5,4 @@ Disallow: /api/
 # Block access to source maps
 Disallow: /*.map$
 
-Sitemap: https://prince.devflow.co.in/sitemap.xml
+Sitemap: https://prince.devflow.co.in/sitemap_index.xml
